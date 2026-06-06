@@ -166,22 +166,7 @@ QCVN_Coverage =
 
 ---
 
-## 6. Ablation Study
-
-So sánh 4 biến thể pipeline trên tập ground truth:
-
-| Pipeline | P | R | F1 | Schema Complete | Additive EL |
-|---|---|---|---|---|---|
-| Rule-based (baseline) | ? | ? | ? | ? | ? |
-| GPT-5.4 nano zero-shot | ? | ? | ? | ? | ? |
-| GPT-5.4 nano few-shot (5) | ? | ? | ? | ? | ? |
-| GPT-5.4 nano few-shot (10) | ? | ? | ? | ? | ? |
-
-Mục tiêu: chứng minh few-shot prompting cải thiện đáng kể so với rule-based và zero-shot.
-
----
-
-## 7. Inter-Annotator Agreement (Ground Truth Quality)
+## 6. Inter-Annotator Agreement (Ground Truth Quality)
 
 Trước khi dùng ground truth để đánh giá pipeline, cần chứng minh ground truth đáng tin cậy:
 
@@ -195,7 +180,7 @@ Cohen's Kappa (κ) cho từng field:
 
 ---
 
-## 8. Thống kê mô tả KG cuối (KG Statistics)
+## 7. Thống kê mô tả KG cuối (KG Statistics)
 
 Báo cáo trong phần Results của bài báo:
 

@@ -126,20 +126,7 @@ FEW-SHOT EXAMPLES: (2-3 ví dụ đầy đủ)
 USER: [product label text]
 ```
 
-### 3.3 Ablation Study — Các biến thể prompt
-
-Để so sánh trong phần đánh giá, chạy 3 biến thể:
-
-| Biến thể | Mô tả |
-|---|---|
-| **Baseline: Rule-based** | Regex + từ điển phụ gia (không dùng LLM) |
-| **Zero-shot** | GPT-5.4 nano + schema, không có examples |
-| **Few-shot (5 examples)** | GPT-5.4 nano + schema + 5 ví dụ annotate thủ công |
-| **Few-shot (10 examples)** | GPT-5.4 nano + schema + 10 ví dụ |
-
-Kết quả so sánh trên tập ground truth → xác định cấu hình tốt nhất cho pipeline chính.
-
-### 3.4 Xử lý lỗi & retry
+### 3.3 Xử lý lỗi & retry
 
 ```python
 # Logic xử lý lỗi
