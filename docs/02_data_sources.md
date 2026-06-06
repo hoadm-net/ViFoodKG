@@ -31,7 +31,7 @@ ViFoodKG được xây dựng từ sự kết hợp của các nguồn dữ li�
 | Nội dung | Tên SP, barcode, thương hiệu, thành phần, dinh dưỡng |
 | Ưu điểm | Dữ liệu cộng đồng lớn, có ảnh nhãn, open license (ODbL) |
 | Hạn chế | Chất lượng không đồng đều, thiếu chuẩn hóa tiếng Việt |
-| Ước tính SP VN | 3,000–8,000 entries (chất lượng biến động) |
+| Thực tế SP VN | 1,432 entries; 186 đủ tiêu chí sau lọc (80% thiếu ingredients_text) |
 
 **Tiền xử lý cần thiết:**
 - Lọc entries có đủ trường `ingredients_text` và ít nhất 3 chỉ số dinh dưỡng

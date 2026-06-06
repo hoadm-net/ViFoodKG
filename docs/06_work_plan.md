@@ -21,10 +21,10 @@ Bước 3: Ground truth từ ảnh bao bì (ViFoodLabel)
 
 | Hạng mục | Chi tiết |
 |---|---|
-| Input | Export CSV toàn bộ, filter `countries_tags=en:vietnam` |
-| Output | Danh sách sản phẩm VN với tên, barcode, thành phần, dinh dưỡng thô |
-| Lọc | Giữ lại entries có `ingredients_text` không rỗng và ≥ 3 chỉ số dinh dưỡng |
-| Ước tính | 1,500–2,000 sản phẩm sau lọc |
+| Input | Search API filter `countries=vietnam`, 1,432 entries raw |
+| Output | `data/processed/off_vietnam.csv` — sản phẩm VN có đủ thông tin |
+| Lọc | Giữ lại entries có `ingredients_text` ≥ 10 ký tự VÀ ≥ 3 chỉ số dinh dưỡng |
+| Thực tế | **186 sản phẩm** sau lọc (80% OFF Vietnam thiếu ingredients_text) |
 
 ### 1.2 Codex Alimentarius + Thông tư 24/2019 → Additive Lookup Table
 
