@@ -34,11 +34,13 @@ Nghiên cứu này đề xuất và hiện thực hóa một pipeline **tự đ�
 
 ```
 docs/
-├── 01_ontology.md        # Schema, entities, relations, ràng buộc
-├── 02_data_sources.md    # Nguồn dữ liệu và cách thu thập
-├── 03_pipeline.md        # Pipeline LLM-automated chi tiết
-├── 04_evaluation.md      # Bộ độ đo đánh giá KG
-└── 05_tech_stack.md      # Công nghệ và công cụ sử dụng
+├── 00_research_foundation.md  # Research questions, hypotheses, contributions
+├── 01_ontology.md             # Schema, entities, relations, ràng buộc
+├── 02_data_sources.md         # Nguồn dữ liệu và cách thu thập
+├── 03_pipeline.md             # Pipeline LLM-automated chi tiết
+├── 04_evaluation.md           # Bộ độ đo đánh giá KG
+├── 05_tech_stack.md           # Công nghệ và công cụ sử dụng
+└── 06_work_plan.md            # Kế hoạch triển khai
 ```
 
 ## Mô hình LLM
