@@ -42,11 +42,11 @@ Bước 3: Ground truth từ ảnh bao bì (ViFoodLabel)
 |---|---|---|
 | ST-1.1 | Parse taxonomy file → structured dict | Python parser theo block E-number |
 | ST-1.2 | Map `additives_classes` → `AdditiveFunction` vocabulary | Dict mapping cố định (gồm SEQUESTRANT, HUMECTANT mới bổ sung) |
-| ST-1.3 | Lấy tên tiếng Việt chính thức | Scrape TT24/2019 từ thuvienphapluat.vn → tên VN authoritative cho ~400 entries; entries còn lại: GPT zero-shot xác định loanword hay dịch |
+| ST-1.3 | Lấy tên tiếng Việt chính thức | Scrape TT24/2019 từ thuvienphapluat.vn → tên VN cho entries có trong TT24; entries còn lại giữ nguyên tên tiếng Anh |
 | ST-1.4 | Điền `permitted_in_vn` | `true` nếu có trong TT24, `false` nếu không |
 | ST-1.5 | Export JSON + CSV | Output cuối, index theo E-number |
 
-> **Lưu ý ST-1.3:** PDF từ chinhphu.vn là ảnh scan. Dùng thuvienphapluat.vn để scrape HTML text — không cần OCR. Tên tiếng Việt trong TT24 là tên **chính thức trên nhãn hàng VN** (mix loanword và Việt hóa, không phải dịch tùy ý). Field `is_loanword` sẽ được ghi nhận để phân tích trong paper.
+> **Lưu ý ST-1.3:** Source: `data/raw/regulations/phu-luc-24-2019-TT-BYT.docx` (Table 0, 400 entries). Tên tiếng Việt trong TT24 là tên **chính thức trên nhãn hàng VN** (mix loanword và Việt hóa). Nếu không có trong TT24 → dùng tên tiếng Anh làm fallback.
 
 ### 1.3 USDA FoodData Central
 
