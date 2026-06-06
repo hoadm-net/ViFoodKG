@@ -80,16 +80,17 @@ distances, indices = index.search(query_emb, k=5)
 
 | Thuộc tính | Chi tiết |
 |---|---|
-| **Storage** | Neo4j Community Edition 5.x |
+| **Storage** | Neo4j Aura Free (cloud-hosted) |
 | **Driver** | `neo4j` Python driver (v5.x) |
 | **Query language** | Cypher |
 | **Export** | RDF/Turtle bằng `rdflib` |
 
-**Lý do chọn Neo4j:**
-- Cypher query trực quan cho graph traversal
-- Built-in visualization (Neo4j Browser)
-- Python driver tốt
-- APOC plugin hỗ trợ import/export nhiều định dạng
+**Lý do chọn Neo4j Aura Free:**
+- Cloud-hosted, không cần quản lý server local
+- Neo4j Browser online sẵn để visualize và query
+- Python driver kết nối qua URI `neo4j+s://`
+- Đủ dung lượng (200MB) cho quy mô KG nghiên cứu này
+- Dễ chia sẻ và verify kết quả khi publish
 
 ### 2.5 Ontology & RDF
 
