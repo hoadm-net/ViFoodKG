@@ -26,13 +26,27 @@ Bước 3: Ground truth từ ảnh bao bì (ViFoodLabel)
 | Lọc | Giữ lại entries có `ingredients_text` không rỗng và ≥ 3 chỉ số dinh dưỡng |
 | Ước tính | 1,500–2,000 sản phẩm sau lọc |
 
-### 1.2 Codex Alimentarius — GSFA
+### 1.2 Codex Alimentarius + Thông tư 24/2019 → Additive Lookup Table
 
-| Hạng mục | Chi tiết |
-|---|---|
-| Input | Download bảng GSFA (General Standard for Food Additives) định dạng XML/CSV |
-| Output | Bảng tra cứu phụ gia: INS/E-number ↔ tên Anh ↔ function class |
-| Vai trò | Reference chuẩn cho toàn bộ `Additive` nodes — dùng xuyên suốt dự án |
+Đây là task xây dựng bảng tra cứu phụ gia — reference dùng xuyên suốt toàn pipeline.
+
+**Input:**
+- `data/raw/codex/openfoodfacts_additives_taxonomy.txt` — 645 entries, E-number + tên Anh + Wikidata
+- [Thông tư 24/2019/TT-BYT](https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Thong-tu-24-2019-TT-BYT-quy-dinh-ve-quan-ly-va-su-dung-phu-gia-thuc-pham-360857.aspx) — ~400 phụ gia được phép tại VN, kèm tên tiếng Việt chính thức
+
+**Output:** `data/processed/codex_additives.json` + `.csv`
+
+**Sub-tasks chi tiết:**
+
+| ST | Công việc | Approach |
+|---|---|---|
+| ST-1.1 | Parse taxonomy file → structured dict | Python parser theo block E-number |
+| ST-1.2 | Map `additives_classes` → `AdditiveFunction` vocabulary | Dict mapping cố định (gồm SEQUESTRANT, HUMECTANT mới bổ sung) |
+| ST-1.3 | Lấy tên tiếng Việt chính thức | Scrape TT24/2019 từ thuvienphapluat.vn → tên VN authoritative cho ~400 entries; entries còn lại: GPT zero-shot xác định loanword hay dịch |
+| ST-1.4 | Điền `permitted_in_vn` | `true` nếu có trong TT24, `false` nếu không |
+| ST-1.5 | Export JSON + CSV | Output cuối, index theo E-number |
+
+> **Lưu ý ST-1.3:** PDF từ chinhphu.vn là ảnh scan. Dùng thuvienphapluat.vn để scrape HTML text — không cần OCR. Tên tiếng Việt trong TT24 là tên **chính thức trên nhãn hàng VN** (mix loanword và Việt hóa, không phải dịch tùy ý). Field `is_loanword` sẽ được ghi nhận để phân tích trong paper.
 
 ### 1.3 USDA FoodData Central
 
@@ -42,18 +56,10 @@ Bước 3: Ground truth từ ảnh bao bì (ViFoodLabel)
 | Output | Giá trị dinh dưỡng tham chiếu cho các nguyên liệu thô phổ biến |
 | Vai trò | Chuẩn hóa và validate giá trị dinh dưỡng của `Ingredient` nodes |
 
-### 1.4 Danh mục phụ gia được phép tại Việt Nam
-
-| Hạng mục | Chi tiết |
-|---|---|
-| Input | QCVN 4-1 đến 4-24 (PDF), Thông tư 24/2019/TT-BYT |
-| Output | Danh sách INS number được phép dùng tại VN theo từng nhóm thực phẩm |
-| Vai trò | Điền trường `Additive.permitted_in_vn` |
-
 **Đầu ra Bước 1:**
 - KG skeleton với ~1,500–2,000 product nodes
-- Bảng tra cứu Codex GSFA hoàn chỉnh (dùng làm lookup table cho toàn dự án)
-- Bảng danh mục phụ gia được phép tại VN
+- `data/processed/codex_additives.json` — lookup table đầy đủ cho toàn dự án
+- Bảng danh mục phụ gia được phép tại VN (từ TT24/2019)
 
 ---
 

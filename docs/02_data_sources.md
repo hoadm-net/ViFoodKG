@@ -87,14 +87,19 @@ Ví dụ: ingredient "đường trắng" → map sang USDA FDC ID 1986 (Sugars, 
 
 ### 2.5 Quy định Việt Nam
 
-| Văn bản | Nội dung liên quan |
-|---|---|
-| Thông tư 43/2014/TT-BYT | Quy định ghi nhãn thực phẩm bao gói sẵn |
-| QCVN 4-1 đến 4-24 | Quy chuẩn kỹ thuật quốc gia về phụ gia thực phẩm |
-| Thông tư 24/2019/TT-BYT | Bổ sung danh mục phụ gia được phép |
-| Nghị định 43/2017/NĐ-CP (sửa đổi) | Nhãn hàng hóa |
+| Văn bản | Nội dung liên quan | Nguồn text |
+|---|---|---|
+| [Thông tư 29/2023/TT-BYT](https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Thong-tu-29-2023-TT-BYT-ghi-thanh-phan-dinh-duong-tren-nhan-thuc-pham-509492.aspx) | Ghi nhãn dinh dưỡng (hiệu lực 01/01/2026) | thuvienphapluat.vn |
+| [Thông tư 24/2019/TT-BYT](https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Thong-tu-24-2019-TT-BYT-quy-dinh-ve-quan-ly-va-su-dung-phu-gia-thuc-pham-360857.aspx) | Danh mục ~400 phụ gia được phép dùng tại VN, kèm tên tiếng Việt chính thức | thuvienphapluat.vn |
+| [Nghị định 43/2017/NĐ-CP](https://thuvienphapluat.vn/van-ban/Thuong-mai/Nghi-dinh-43-2017-ND-CP-nhan-hang-hoa-346310.aspx) | Nhãn hàng hóa | thuvienphapluat.vn |
+| [Nghị định 111/2021/NĐ-CP](https://thuvienphapluat.vn/van-ban/Thuong-mai/Nghi-dinh-111-2021-ND-CP-sua-doi-Nghi-dinh-43-2017-ND-CP-497099.aspx) | Sửa đổi Nghị định 43/2017 | thuvienphapluat.vn |
 
-**Vai trò:** Xác nhận trường `Additive.permitted_in_vn` và category taxonomy phù hợp với phân loại thực phẩm VN.
+> **Lưu ý kỹ thuật:** File PDF tải từ chinhphu.vn là ảnh scan, không có text layer. Dùng thuvienphapluat.vn để scrape HTML text trực tiếp — không cần OCR.
+
+**Vai trò:**
+- **TT24/2019**: nguồn chính cho `Additive.name_vi` (tên tiếng Việt chính thức) và `Additive.permitted_in_vn`
+- **TT29/2023**: xác nhận 5 chỉ số dinh dưỡng bắt buộc và điều kiện áp dụng SUGAR, FAT_SATURATED
+- **ND43 + ND111**: tham chiếu quy định ghi nhãn chung
 
 ### 2.6 Ground Truth — Annotate thủ công
 

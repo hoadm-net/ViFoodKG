@@ -18,12 +18,25 @@ data/
 
 ## raw/regulations/ — Văn bản pháp luật
 
-| File | Nguồn | Lệnh tải |
+> **Lưu ý:** PDF tải từ chinhphu.vn là ảnh scan, không có text layer.
+> Pipeline dùng thuvienphapluat.vn để scrape HTML text — không cần OCR.
+> Các file PDF dưới đây chỉ để lưu trữ tham chiếu.
+
+| File | Nguồn PDF (tham chiếu) | Nguồn text (dùng trong pipeline) |
 |---|---|---|
-| `TT29-2023-TT-BYT_ghi-nhan-dinh-duong.pdf` | [vanban.chinhphu.vn](https://vanban.chinhphu.vn/?pageid=27160&docid=209434) | `curl -L "https://datafiles.chinhphu.vn/cpp/files/vbpq/2024/01/29-byt.signed.pdf" -o data/raw/regulations/TT29-2023-TT-BYT_ghi-nhan-dinh-duong.pdf` |
-| `ND43-2017-ND-CP_nhan-hang-hoa.pdf` | [vanban.chinhphu.vn](https://vanban.chinhphu.vn/default.aspx?pageid=27160&docid=189385) | `curl -L "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/04/43.signed.pdf" -o data/raw/regulations/ND43-2017-ND-CP_nhan-hang-hoa.pdf` |
-| `ND111-2021-ND-CP_sua-doi-ND43.pdf` | [vanban.chinhphu.vn](https://vanban.chinhphu.vn/?pageid=27160&docid=204681) | `curl -L "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/111.signed.pdf" -o data/raw/regulations/ND111-2021-ND-CP_sua-doi-ND43.pdf` |
-| `TT24-2019-TT-BYT_danh-muc-phu-gia.pdf` | [vanban.chinhphu.vn](https://vanban.chinhphu.vn/?pageid=27160&docid=197320) | `curl -L "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/07/5927.signed.pdf" -o data/raw/regulations/TT24-2019-TT-BYT_danh-muc-phu-gia.pdf` |
+| `TT29-2023-TT-BYT_ghi-nhan-dinh-duong.pdf` | [chinhphu.vn](https://vanban.chinhphu.vn/?pageid=27160&docid=209434) | [thuvienphapluat.vn](https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Thong-tu-29-2023-TT-BYT-ghi-thanh-phan-dinh-duong-tren-nhan-thuc-pham-509492.aspx) |
+| `TT24-2019-TT-BYT_danh-muc-phu-gia.pdf` | [chinhphu.vn](https://vanban.chinhphu.vn/?pageid=27160&docid=197320) | [thuvienphapluat.vn](https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Thong-tu-24-2019-TT-BYT-quy-dinh-ve-quan-ly-va-su-dung-phu-gia-thuc-pham-360857.aspx) |
+| `ND43-2017-ND-CP_nhan-hang-hoa.pdf` | [chinhphu.vn](https://vanban.chinhphu.vn/default.aspx?pageid=27160&docid=189385) | [thuvienphapluat.vn](https://thuvienphapluat.vn/van-ban/Thuong-mai/Nghi-dinh-43-2017-ND-CP-nhan-hang-hoa-346310.aspx) |
+| `ND111-2021-ND-CP_sua-doi-ND43.pdf` | [chinhphu.vn](https://vanban.chinhphu.vn/?pageid=27160&docid=204681) | [thuvienphapluat.vn](https://thuvienphapluat.vn/van-ban/Thuong-mai/Nghi-dinh-111-2021-ND-CP-sua-doi-Nghi-dinh-43-2017-ND-CP-497099.aspx) |
+
+**Tải lại PDF (nếu cần):**
+
+```bash
+curl -L "https://datafiles.chinhphu.vn/cpp/files/vbpq/2024/01/29-byt.signed.pdf" -o data/raw/regulations/TT29-2023-TT-BYT_ghi-nhan-dinh-duong.pdf
+curl -L "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/07/5927.signed.pdf"   -o data/raw/regulations/TT24-2019-TT-BYT_danh-muc-phu-gia.pdf
+curl -L "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/04/43.signed.pdf"    -o data/raw/regulations/ND43-2017-ND-CP_nhan-hang-hoa.pdf
+curl -L "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/111.signed.pdf"   -o data/raw/regulations/ND111-2021-ND-CP_sua-doi-ND43.pdf
+```
 
 ---
 

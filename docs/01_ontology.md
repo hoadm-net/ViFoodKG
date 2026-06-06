@@ -159,6 +159,8 @@ Theo phân loại Codex Alimentarius:
 | `SWEETENER` | Chất tạo ngọt | E950, E951, E955 |
 | `ACIDITY_REGULATOR` | Chất điều chỉnh độ axit | E330, E331, E296 |
 | `RAISING_AGENT` | Chất làm nở | E500, E503, E450 |
+| `SEQUESTRANT` | Chất tạo phức / chất giữ kim loại | E385, E386, E452 |
+| `HUMECTANT` | Chất giữ ẩm | E420, E421, E422 |
 
 ---
 
