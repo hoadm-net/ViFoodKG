@@ -11,8 +11,12 @@ __pycache__/
 .pytest_cache/
 
 # Data (raw data không commit vào repo)
-data/raw/
-data/processed/
+data/raw/**
+data/processed/**
+!data/raw/ground_truth/
+!data/raw/ground_truth/.gitkeep
+!data/processed/
+!data/processed/.gitkeep
 
 # Jupyter
 .ipynb_checkpoints/
